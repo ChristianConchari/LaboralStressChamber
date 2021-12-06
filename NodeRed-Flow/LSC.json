@@ -1,0 +1,3051 @@
+[
+    {
+        "id": "2855cd4a11bf068e",
+        "type": "tab",
+        "label": "Variables de ambiente y Parámetros fisiológicos",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e2229e09f034b89b",
+        "type": "tab",
+        "label": "Iluminación y Cámaras",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "50747848c90fa6d0",
+        "type": "tab",
+        "label": "Efectos de sonido",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4742221230958954",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "192.168.1.105",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d1f44e84b46473b2",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "b09493f68b77109a",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fd86817cdebbac85",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0075b4",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#0075b3",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Laboral Stress Chamber",
+                "default": "#4B7930",
+                "baseColor": "#054f04",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0075b4",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0075b4",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#01a6ff",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0075b4",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b09493f68b77109a",
+        "type": "ui_tab",
+        "name": "Parámetros ambientales",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dcc836ba0ac609bd",
+        "type": "ui_group",
+        "name": "Cámaras",
+        "tab": "b09493f68b77109a",
+        "order": 8,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c069f85fe833321d",
+        "type": "websocket-listener",
+        "path": "/ws/camera1",
+        "wholemsg": "false"
+    },
+    {
+        "id": "c85ca3518239ecee",
+        "type": "ui_group",
+        "name": "Humedad Relativa",
+        "tab": "b09493f68b77109a",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "81994ca14ebfcc9a",
+        "type": "ui_group",
+        "name": "Calidad de aire",
+        "tab": "b09493f68b77109a",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c8432e3baaf47ce6",
+        "type": "ui_group",
+        "name": "Sonido",
+        "tab": "b09493f68b77109a",
+        "order": 10,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "524d85f.8ebbc7c",
+        "type": "websocket-listener",
+        "path": "/ws/cam",
+        "wholemsg": "false"
+    },
+    {
+        "id": "237ea9d4.459ba6",
+        "type": "yeelight-compat-hue-config",
+        "hostname": "192.168.0.23",
+        "port": "55443",
+        "name": ""
+    },
+    {
+        "id": "e7bb4fa8ab5fade0",
+        "type": "yeelight-compat-hue-config",
+        "hostname": "192.168.1.100",
+        "port": "55443",
+        "name": ""
+    },
+    {
+        "id": "e9b889a3a178ce8e",
+        "type": "ui_group",
+        "name": "Panel de control de luz",
+        "tab": "b09493f68b77109a",
+        "order": 7,
+        "disp": true,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a3df621d1601562d",
+        "type": "ui_group",
+        "name": "Parámetros fisiológicos",
+        "tab": "b09493f68b77109a",
+        "order": 6,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "44b31f51fe1c90f9",
+        "type": "ui_group",
+        "name": "cabecera",
+        "tab": "b09493f68b77109a",
+        "order": 1,
+        "disp": false,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5700f10179c7f92e",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "26099dbd5af318de",
+        "type": "ui_group",
+        "name": "Panel de Control",
+        "tab": "b09493f68b77109a",
+        "order": 2,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cd6aa41d48b7cf68",
+        "type": "yeelight-compat-hue-config",
+        "hostname": "192.168.1.101",
+        "port": "55443",
+        "name": ""
+    },
+    {
+        "id": "6180b599802f1189",
+        "type": "ui_tab",
+        "name": "Graphs",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7788cebdb6eeb8c7",
+        "type": "ui_group",
+        "name": "Graphs",
+        "tab": "6180b599802f1189",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "16fbdc72f5829fca",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 1,
+        "width": 18,
+        "height": 1
+    },
+    {
+        "id": "d317eac40d45ce98",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "d154e2da15de0873",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 5,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "431e6ea019ebd298",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "908e9b46e34eb7c7",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "7d42b8f19473d444",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "a3df621d1601562d",
+        "order": 8,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "15bd67448226634c",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 3,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "0feb39ecec56f19b",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 5,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "0b00ce6baeeaba67",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 6,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "85f26beac57769d6",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 7,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "9b48c906ef0631f8",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 8,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "33555827d758a4e0",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 9,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "b80c3a7147142312",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 10,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "0599d920986930ae",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 11,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "78b9acaaba1e8cf7",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 12,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "e6d21ebe5be4b259",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "e9b889a3a178ce8e",
+        "order": 13,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "f2b0987872b8915c",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e39b4af49db6aa02",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c4ae830f7cc11c05",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d1b7d576a1bd1b72",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4af6eda2acb0b020",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "19f27543f7868761",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6aa1ee17a197da7c",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a8269482ee1d468e",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "69471150ae523086",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8f77a494a0f0a803",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "94b2d02cdd754a06",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ee546d3869013235",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b5c1b335abd9160b",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3c775eb8ebb7362f",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b0242f41721a9876",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0067af1485d8adfe",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "078ba9ddabc0870e",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fdffaf1c49b9b779",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "20df6b45b09be14a",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "655af4717b5d8ff5",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "396a8c89d1375e4f",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "249c609e4c13beae",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "66d8c19086fbca06",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 24,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7aab3be3dc02a372",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 25,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "afe581662f124a51",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 26,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e7b65d38bc967433",
+        "type": "ui_spacer",
+        "z": "e2229e09f034b89b",
+        "name": "spacer",
+        "group": "dcc836ba0ac609bd",
+        "order": 27,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d1cdf9f92c101bcb",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/humidity3",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "ac41d50736fa1381"
+            ]
+        ]
+    },
+    {
+        "id": "77a5b17f597a0ceb",
+        "type": "ui_gauge",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "group": "c85ca3518239ecee",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Humedad Relativa",
+        "label": "%RH",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "665f090fda38ca36",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('hum2',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cdf3014099b207ad",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var hum1=global.get('hum1');\nvar hum2=global.get('hum2');\nvar hum3=global.get('hum3');\n\nmsg.payload = ((hum1+hum2+hum3)/3).toFixed(2);\n//msg.payload = 50;\n\n//global.set('humidity',msg.payload);\nglobal.set('humidity',45);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "77a5b17f597a0ceb"
+            ]
+        ]
+    },
+    {
+        "id": "db461beca4bde2a8",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "cdf3014099b207ad"
+            ]
+        ]
+    },
+    {
+        "id": "ac41d50736fa1381",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('hum3',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02ebd5979e4ef986",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('hum1',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd402845cdcb6788",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('tem2',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0b9323a501be5e8",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('tem1',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e85ac5d8e05fc867",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('tem3',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bdb54e6814162d87",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var tem1=global.get('tem1');\nvar tem2=global.get('tem2');\nvar tem3=global.get('tem3');\n\nmsg.payload = ((tem1+tem2+tem3)/3).toFixed(2);\n//msg.payload = 30;\n\n//global.set('temperature',msg.payload);\nglobal.set('temperature',25);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "93a775d5bbce9550"
+            ]
+        ]
+    },
+    {
+        "id": "537e6fe16110c467",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "bdb54e6814162d87"
+            ]
+        ]
+    },
+    {
+        "id": "cc5b37d8b02badf7",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var temperature=global.get('temperature');\nvar temperature_flag=global.get('temperature_flag');\nvar humidity_flag=global.get('humidity_flag');\nvar setpoint_temperature=global.get('setpoint_temp');\n\nif(temperature_flag == 1 && humidity_flag == 0){\n    if(temperature < setpoint_temperature){\n        global.set('temperature_relay',1);\n    }else{\n        global.set('temperature_relay',0);\n    }\n    \n    if(temperature > setpoint_temperature){\n        global.set('cooler_relay',1);\n    }else{\n        global.set('cooler_relay',0);\n    }\n    \n}else{\n    global.set('temperature_relay',0);\n    global.set('cooler_relay',0);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cca8c457a94cee47",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1500,
+        "wires": [
+            [
+                "cc5b37d8b02badf7"
+            ]
+        ]
+    },
+    {
+        "id": "7a6bf299c6f21c7a",
+        "type": "ui_numeric",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "label": "Temperatura deseada",
+        "tooltip": "",
+        "group": "d1f44e84b46473b2",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "step": 1,
+        "className": "",
+        "x": 140,
+        "y": 1640,
+        "wires": [
+            [
+                "0af9d847cdd4a081"
+            ]
+        ]
+    },
+    {
+        "id": "0af9d847cdd4a081",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = msg.payload.toFixed(2);\nglobal.set('setpoint_temp',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b99920e111fc8dc3",
+        "type": "ui_numeric",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "label": "Humedad deseada",
+        "tooltip": "",
+        "group": "c85ca3518239ecee",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "30",
+        "max": "80",
+        "step": 1,
+        "className": "",
+        "x": 130,
+        "y": 1700,
+        "wires": [
+            [
+                "36a21682f48c159e"
+            ]
+        ]
+    },
+    {
+        "id": "36a21682f48c159e",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = msg.payload.toFixed(2);\nglobal.set('setpoint_hum',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3047a50fc085ddd",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var humidity=global.get('humidity');\nvar humidity_flag=global.get('humidity_flag');\nvar temperature_flag=global.get('temperature_flag');\nvar setpoint_humidity=global.get('setpoint_hum');\n\nif(temperature_flag == 0 && humidity_flag == 1){\n    if(humidity < setpoint_humidity){\n        global.set('humidity_relay',1);\n    }else{\n        global.set('humidity_relay',0);\n    }\n    \n    if(humidity > setpoint_humidity){\n        global.set('temperature_relay',1);\n    }else{\n        global.set('temperature_relay',0);\n    }\n\n}else{\n    global.set('humidity_relay',0);    \n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9a3cb8117d68343",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1560,
+        "wires": [
+            [
+                "e3047a50fc085ddd"
+            ]
+        ]
+    },
+    {
+        "id": "5bd7d297ee663c97",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('air_q2',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6eb926047702cf9f",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('air_q1',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bacb59f5f78130f",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('air_q3',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4edb97aee5981ca1",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var air_q1=global.get('air_q1');\nvar air_q2=global.get('air_q2');\nvar air_q3=global.get('air_q3');\n\nmsg.payload = ((air_q1+air_q2+air_q3)/3).toFixed(2);\n//msg.payload = 305;\n\n//global.set('air_q',msg.payload);\nglobal.set('air_q',280);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 860,
+        "wires": [
+            [
+                "980c118ac4a483b3"
+            ]
+        ]
+    },
+    {
+        "id": "f31ce9e7aa1a5af1",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 860,
+        "wires": [
+            [
+                "4edb97aee5981ca1"
+            ]
+        ]
+    },
+    {
+        "id": "42bcaec0dba333b1",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/bpm",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c0e11dda762d701",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/temp_corp",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "290194adcd854a7b",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/temperature3",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "e85ac5d8e05fc867"
+            ]
+        ]
+    },
+    {
+        "id": "3b7c5c8dbcbcaa96",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/air_quality3",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 780,
+        "wires": [
+            [
+                "7bacb59f5f78130f"
+            ]
+        ]
+    },
+    {
+        "id": "322c618409450a0e",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/air_quality2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "5bd7d297ee663c97"
+            ]
+        ]
+    },
+    {
+        "id": "6e8388b0b91c0fa8",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/air_quality1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 700,
+        "wires": [
+            [
+                "6eb926047702cf9f"
+            ]
+        ]
+    },
+    {
+        "id": "19009b9755bae3a7",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/temperature2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "fd402845cdcb6788"
+            ]
+        ]
+    },
+    {
+        "id": "a16065c3839579eb",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/temperature1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "c0b9323a501be5e8"
+            ]
+        ]
+    },
+    {
+        "id": "3b27a5c220a0e1df",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/humidity2",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "665f090fda38ca36"
+            ]
+        ]
+    },
+    {
+        "id": "56d5116ff9272e7f",
+        "type": "mqtt in",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "topic": "/feeds/humidity1",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "02ebd5979e4ef986"
+            ]
+        ]
+    },
+    {
+        "id": "b9852035e5c95e6f",
+        "type": "ui_text",
+        "z": "2855cd4a11bf068e",
+        "group": "81994ca14ebfcc9a",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "",
+        "label": "Nivele de contaminación del ambiente",
+        "format": "",
+        "layout": "row-center",
+        "className": "",
+        "x": 190,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "ed96de0afb7e99ed",
+        "type": "ui_template",
+        "z": "2855cd4a11bf068e",
+        "group": "44b31f51fe1c90f9",
+        "name": "",
+        "order": 1,
+        "width": 18,
+        "height": 8,
+        "format": "<div>\n    <img src=\"/images/logo_white.png\" />\n    <img src=\"/images/LSC_logo2.png\" />\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86a568bb41eb35d1",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var temperature_relay=global.get('temperature_relay');\n\nif(temperature_relay==1){\n    msg.payload = 1;\n}else{\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1840,
+        "wires": [
+            [
+                "177f2e10dddf856a",
+                "a45dce4734a06704"
+            ]
+        ]
+    },
+    {
+        "id": "b5de242138cc0409",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1840,
+        "wires": [
+            [
+                "86a568bb41eb35d1"
+            ]
+        ]
+    },
+    {
+        "id": "5192801fa76cdb40",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var cooler_relay=global.get('cooler_relay');\n\nif(cooler_relay==1){\n    msg.payload = 0;\n}else{\n    msg.payload = 1;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1920,
+        "wires": [
+            [
+                "279a6377630a5084"
+            ]
+        ]
+    },
+    {
+        "id": "30dc02c76b6691ed",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1920,
+        "wires": [
+            [
+                "5192801fa76cdb40"
+            ]
+        ]
+    },
+    {
+        "id": "9f7fa96216fa4a02",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "var humidity_relay=global.get('humidity_relay');\n\nif(humidity_relay==1){\n    msg.payload = 0;\n}else{\n    msg.payload = 1;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2160,
+        "wires": [
+            [
+                "3f9a71ddedb5c841",
+                "cdc159f640a28902"
+            ]
+        ]
+    },
+    {
+        "id": "c666561bcb68212d",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 2160,
+        "wires": [
+            [
+                "9f7fa96216fa4a02"
+            ]
+        ]
+    },
+    {
+        "id": "177f2e10dddf856a",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "12",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 480,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "cdc159f640a28902",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "18",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 500,
+        "y": 2180,
+        "wires": []
+    },
+    {
+        "id": "279a6377630a5084",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "16",
+        "set": true,
+        "level": "1",
+        "freq": "",
+        "out": "out",
+        "x": 480,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "3f9a71ddedb5c841",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "22",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 500,
+        "y": 2100,
+        "wires": []
+    },
+    {
+        "id": "a45dce4734a06704",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "7",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 480,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "a546454c55eea067",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "24",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 500,
+        "y": 2040,
+        "wires": []
+    },
+    {
+        "id": "feaba5efe1e1a868",
+        "type": "rpi-gpio out",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "pin": "26",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 500,
+        "y": 2280,
+        "wires": []
+    },
+    {
+        "id": "93a775d5bbce9550",
+        "type": "ui_gauge",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "group": "d1f44e84b46473b2",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "15",
+        "max": "35",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "className": "",
+        "x": 550,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "980c118ac4a483b3",
+        "type": "ui_gauge",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "group": "81994ca14ebfcc9a",
+        "order": 2,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "MQ-135 Calidad de aire",
+        "label": "PPM",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "650",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "className": "",
+        "x": 590,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "d5408d2563b13fd1",
+        "type": "ui_text",
+        "z": "2855cd4a11bf068e",
+        "group": "26099dbd5af318de",
+        "order": 1,
+        "width": 18,
+        "height": 1,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 430,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "262599a97676132b",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = \"\\n Para hacer uso del sistema de control de Temperatura o Humedad asegurese de activar la opción correspondiente en el panel inferior. Para fijar la temperatura o Humedad objetivo interactúe con el botón para incrementar y reducir este valor. Tome en cuenta que no puede mantener activo el control de temperatura al mismo tiempo que el control de Humedad \\n\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 1060,
+        "wires": [
+            [
+                "d5408d2563b13fd1"
+            ]
+        ]
+    },
+    {
+        "id": "f427c89ea6382228",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1060,
+        "wires": [
+            [
+                "262599a97676132b"
+            ]
+        ]
+    },
+    {
+        "id": "60737eec1914a31c",
+        "type": "ui_switch",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "label": "Control de Temperatura",
+        "tooltip": "",
+        "group": "26099dbd5af318de",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 150,
+        "y": 1160,
+        "wires": [
+            [
+                "cad0429aaf13e0ba"
+            ]
+        ]
+    },
+    {
+        "id": "4eaa450336611af3",
+        "type": "ui_switch",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "label": "Control de Humedad",
+        "tooltip": "",
+        "group": "26099dbd5af318de",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 1220,
+        "wires": [
+            [
+                "5ac56772f536cc0e"
+            ]
+        ]
+    },
+    {
+        "id": "cad0429aaf13e0ba",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "if(msg.payload){\n    global.set('temperature_flag',1);\n}else{\n    global.set('temperature_flag',0);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5ac56772f536cc0e",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "if(msg.payload){\n    global.set('humidity_flag',1);\n}else{\n    global.set('humidity_flag',0);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f420546fcac17061",
+        "type": "ui_gauge",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "group": "a3df621d1601562d",
+        "order": 2,
+        "width": 7,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Pulsaciones Por Minuto",
+        "label": "PPM",
+        "format": "{{value}}",
+        "min": "50",
+        "max": "120",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 530,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "3a114fac26a083f6",
+        "type": "ui_gauge",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "group": "a3df621d1601562d",
+        "order": 4,
+        "width": 7,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Temperatura Corporal",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "45",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1160,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "b42a989ac34cb56a",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "return 0;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 2040,
+        "wires": [
+            [
+                "a546454c55eea067"
+            ]
+        ]
+    },
+    {
+        "id": "0e3c0244d1bdd8ea",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "return 0;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 2280,
+        "wires": [
+            [
+                "feaba5efe1e1a868"
+            ]
+        ]
+    },
+    {
+        "id": "2ffafeccc506e78e",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2040,
+        "wires": [
+            [
+                "b42a989ac34cb56a"
+            ]
+        ]
+    },
+    {
+        "id": "f2f4373f8a6f227f",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 150,
+        "y": 2280,
+        "wires": [
+            [
+                "0e3c0244d1bdd8ea"
+            ]
+        ]
+    },
+    {
+        "id": "07c2f5cdc2b6d6a9",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = global.get('bpm');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1440,
+        "wires": [
+            [
+                "f420546fcac17061"
+            ]
+        ]
+    },
+    {
+        "id": "ce964b5ecdd3423d",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "//global.set('bpm',msg.payload);\nglobal.set('bpm',60);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3eb957ac12b231df",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 1440,
+        "wires": [
+            [
+                "07c2f5cdc2b6d6a9"
+            ]
+        ]
+    },
+    {
+        "id": "28272ffbc41fa845",
+        "type": "comment",
+        "z": "2855cd4a11bf068e",
+        "name": "Auto Logger",
+        "info": "",
+        "x": 270,
+        "y": 2520,
+        "wires": []
+    },
+    {
+        "id": "77a3dc4154ebbd51",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "Set data",
+        "func": "var now = new Date();\nvar temperature = global.get('temperature');\nvar humidity = global.get('humidity');\nvar air_quality = global.get('air_q');\nvar heart_rate = global.get('bpm');\nvar temp_corp = global.get('temp_corp');\n\n\nmsg.payload = {\n    \"temperatura\" : temperature,\n    \"humedad\" : humidity,\n    \"calidad_de_aire\" : air_quality,\n    \"bpm\" : heart_rate,\n    \"temperatura_corporal\" : temp_corp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 2580,
+        "wires": [
+            [
+                "af7c5306dae4f705"
+            ]
+        ]
+    },
+    {
+        "id": "af7c5306dae4f705",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"LSC_\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"/home/pi/node-red-static/datalog/\"+ msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 2700,
+        "wires": [
+            [
+                "a075208fab36902e"
+            ]
+        ]
+    },
+    {
+        "id": "9a7f40b545504c15",
+        "type": "debug",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 710,
+        "y": 2620,
+        "wires": []
+    },
+    {
+        "id": "2b1af697baaf9868",
+        "type": "switch",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "property": "$count(msg.payload)",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 2700,
+        "wires": [
+            [
+                "e5ca296d8304a528"
+            ],
+            [
+                "a8fe11e92654b868"
+            ]
+        ]
+    },
+    {
+        "id": "7d691285ae85d8d3",
+        "type": "csv",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "temperatura,humedad,calidad_de_aire,bpm,temperatura_corporal",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1030,
+        "y": 2680,
+        "wires": [
+            [
+                "634941a345ace2ec"
+            ]
+        ]
+    },
+    {
+        "id": "634941a345ace2ec",
+        "type": "file",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1190,
+        "y": 2680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fce1856fa65d4898",
+        "type": "csv",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "temperatura,humedad,calidad_de_aire,bpm,temperatura_corporal",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 1030,
+        "y": 2720,
+        "wires": [
+            [
+                "634941a345ace2ec"
+            ]
+        ]
+    },
+    {
+        "id": "e5ca296d8304a528",
+        "type": "change",
+        "z": "2855cd4a11bf068e",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 2680,
+        "wires": [
+            [
+                "7d691285ae85d8d3"
+            ]
+        ]
+    },
+    {
+        "id": "a8fe11e92654b868",
+        "type": "change",
+        "z": "2855cd4a11bf068e",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 2720,
+        "wires": [
+            [
+                "fce1856fa65d4898"
+            ]
+        ]
+    },
+    {
+        "id": "289d506255585568",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "msg.payload = global.get('temp_corp');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 1440,
+        "wires": [
+            [
+                "3a114fac26a083f6"
+            ]
+        ]
+    },
+    {
+        "id": "40c8ddd82d567521",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 770,
+        "y": 1440,
+        "wires": [
+            [
+                "289d506255585568"
+            ]
+        ]
+    },
+    {
+        "id": "a075208fab36902e",
+        "type": "fs-file-lister",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "start": "/home/pi//home/pi/node-red-static/datalog/",
+        "pattern": "",
+        "folders": "*",
+        "hidden": true,
+        "lstype": "files",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 480,
+        "y": 2700,
+        "wires": [
+            [
+                "9a7f40b545504c15",
+                "2b1af697baaf9868"
+            ]
+        ]
+    },
+    {
+        "id": "250eb299fe9da781",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 510,
+        "y": 1320,
+        "wires": [
+            [
+                "ce964b5ecdd3423d"
+            ]
+        ]
+    },
+    {
+        "id": "485575d0bcca9ab7",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 500,
+        "y": 1380,
+        "wires": [
+            [
+                "dc7b7d472e3fc68c"
+            ]
+        ]
+    },
+    {
+        "id": "dc7b7d472e3fc68c",
+        "type": "function",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "func": "//global.set('temp_corp',msg.payload);\nglobal.set('temp_corp',35);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbbf3c8a9da999a4",
+        "type": "inject",
+        "z": "2855cd4a11bf068e",
+        "name": "",
+        "props": [],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 2580,
+        "wires": [
+            [
+                "77a3dc4154ebbd51"
+            ]
+        ]
+    },
+    {
+        "id": "29500a2ea2af9cec",
+        "type": "inject",
+        "z": "e2229e09f034b89b",
+        "name": "10 sec timer true",
+        "props": [],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "26d325df988b565e"
+            ]
+        ]
+    },
+    {
+        "id": "bea38ee92f6ce881",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "global.set(\"Yeelight\", msg.payload.state.on)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f1def90253684175",
+        "type": "debug",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "7a248dfb14678266",
+        "type": "ui_slider",
+        "z": "e2229e09f034b89b",
+        "name": "Intensidad",
+        "label": "Intensidad",
+        "tooltip": "",
+        "group": "e9b889a3a178ce8e",
+        "order": 15,
+        "width": 18,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": "10",
+        "max": "250",
+        "step": "10",
+        "className": "",
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "86452cf79df61398"
+            ]
+        ]
+    },
+    {
+        "id": "86452cf79df61398",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "Intensidad luminosa",
+        "func": "var lux_type=global.get('lux_type');\n\n\nmsg.payload='{\"' + lux_type + '\":true, \"on\": true,\"bri\":' + msg.payload + '}' ;\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 40,
+        "wires": [
+            [
+                "2c2b7da4d8290b2a",
+                "18a7e2e5b0f035ee"
+            ]
+        ]
+    },
+    {
+        "id": "75b25d5397ca161e",
+        "type": "ui_switch",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "label": "Apagar/Encender",
+        "tooltip": "",
+        "group": "e9b889a3a178ce8e",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "46a71910b35a69ef"
+            ]
+        ]
+    },
+    {
+        "id": "3111c34c347f6f9a",
+        "type": "ui_template",
+        "z": "e2229e09f034b89b",
+        "group": "dcc836ba0ac609bd",
+        "name": "",
+        "order": 1,
+        "width": "18",
+        "height": "30",
+        "format": "<!-- img id=\"idOfImageToReload\" onload=\"javascript:(function(){setTimeout(function(){document.getElementById('idOfImageToReload').src=document.getElementById('idOfImageToReload').src.split('?')[0]+'?time='+new Date().getTime();},1000);}())\" src=\"photo.jpg\" /-->\n<div>\n    <iframe width=\"900\" height=\"1400\" src=\"http://192.168.1.105:8000/client\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 100,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e1c84283c166769b",
+        "type": "ui_dropdown",
+        "z": "e2229e09f034b89b",
+        "name": "Seleccionar Color",
+        "label": "Seleccionar Color",
+        "tooltip": "",
+        "place": "CHOOSE",
+        "group": "e9b889a3a178ce8e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "WHITE",
+                "value": "#FFFFFF",
+                "type": "str"
+            },
+            {
+                "label": "RED",
+                "value": "#FF0000",
+                "type": "str"
+            },
+            {
+                "label": "GREEN",
+                "value": "#00FF00",
+                "type": "str"
+            },
+            {
+                "label": "BLUE",
+                "value": "#0000FF",
+                "type": "str"
+            },
+            {
+                "label": "CYAN",
+                "value": "#00FFFF",
+                "type": "str"
+            },
+            {
+                "label": "PURPLE",
+                "value": "#FF00FF",
+                "type": "str"
+            },
+            {
+                "label": "YELLOW",
+                "value": "#FFFF00",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "fc362d7858b6244c"
+            ]
+        ]
+    },
+    {
+        "id": "fc362d7858b6244c",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "Format Color",
+        "func": "msg.payload='{\"on\": true, \"hex\": \"' + msg.payload + '\", \"sat\":0}' ;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "2c2b7da4d8290b2a",
+                "18a7e2e5b0f035ee"
+            ]
+        ]
+    },
+    {
+        "id": "46a71910b35a69ef",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "Encendido - Apagado",
+        "func": "msg.payload='{\"on\":' + msg.payload + '}' ;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "2c2b7da4d8290b2a",
+                "18a7e2e5b0f035ee"
+            ]
+        ]
+    },
+    {
+        "id": "26d325df988b565e",
+        "type": "yeelight-compat-hue-state",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "server": "e7bb4fa8ab5fade0",
+        "x": 360,
+        "y": 420,
+        "wires": [
+            [
+                "bea38ee92f6ce881",
+                "f1def90253684175"
+            ]
+        ]
+    },
+    {
+        "id": "2c2b7da4d8290b2a",
+        "type": "yeelight-compat-hue-out",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "server": "cd6aa41d48b7cf68",
+        "x": 640,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "18a7e2e5b0f035ee",
+        "type": "yeelight-compat-hue-out",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "server": "e7bb4fa8ab5fade0",
+        "x": 640,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "8e66312732a788a5",
+        "type": "ui_dropdown",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "label": "Tipo de luz",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "e9b889a3a178ce8e",
+        "order": 1,
+        "width": 18,
+        "height": 1,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Luz Blanca",
+                "value": "luz_blanca",
+                "type": "str"
+            },
+            {
+                "label": "Luz RGB",
+                "value": "luz_RGB",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "className": "",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "4b2c5fb5fd6b9b5e"
+            ]
+        ]
+    },
+    {
+        "id": "4b2c5fb5fd6b9b5e",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "Format Color",
+        "func": "if(msg.payload == \"luz_blanca\"){\n    global.set('lux_type', \"ct\");\n}else{\n    global.set('lux_type', \"rgb\");\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set('lux_type', \"ct\");",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbf733d90c76663a",
+        "type": "inject",
+        "z": "e2229e09f034b89b",
+        "name": "10 sec timer true",
+        "props": [],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "10",
+        "topic": "",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "f2fb61676785efd2"
+            ]
+        ]
+    },
+    {
+        "id": "9cc20095911be949",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "global.set(\"Yeelight\", msg.payload.state.on)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4de5d38ffd6c9022",
+        "type": "debug",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f2fb61676785efd2",
+        "type": "yeelight-compat-hue-state",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "server": "cd6aa41d48b7cf68",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "9cc20095911be949",
+                "4de5d38ffd6c9022"
+            ]
+        ]
+    },
+    {
+        "id": "3868a4766dbae236",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('light2',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cc099b22350f712c",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('light1',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "764d55c170260470",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "msg.payload = parseFloat(msg.payload);\nglobal.set('light3',msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9116cdc5afe6f674",
+        "type": "function",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "func": "var light1=global.get('light1');\nvar light2=global.get('light2');\nvar light3=global.get('light3');\n\nmsg.payload = ((0.5*light1)+(0.5*light2)+(0.5*light3)).toFixed(2);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 920,
+        "wires": [
+            [
+                "cd81ff7e0c197f72"
+            ]
+        ]
+    },
+    {
+        "id": "0ecc0523c2480555",
+        "type": "inject",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "props": [],
+        "repeat": "0.5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 920,
+        "wires": [
+            [
+                "9116cdc5afe6f674"
+            ]
+        ]
+    },
+    {
+        "id": "3e8f44485bea6b5e",
+        "type": "mqtt in",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "topic": "/feeds/light3",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 840,
+        "wires": [
+            [
+                "764d55c170260470"
+            ]
+        ]
+    },
+    {
+        "id": "eeebee68bde501e5",
+        "type": "mqtt in",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "topic": "/feeds/light2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 800,
+        "wires": [
+            [
+                "3868a4766dbae236"
+            ]
+        ]
+    },
+    {
+        "id": "fc1399c9c07ac8d9",
+        "type": "mqtt in",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "topic": "/feeds/light1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4742221230958954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 760,
+        "wires": [
+            [
+                "cc099b22350f712c"
+            ]
+        ]
+    },
+    {
+        "id": "cd81ff7e0c197f72",
+        "type": "ui_gauge",
+        "z": "e2229e09f034b89b",
+        "name": "",
+        "group": "e9b889a3a178ce8e",
+        "order": 4,
+        "width": 6,
+        "height": 5,
+        "gtype": "gage",
+        "title": "Luz ambiente",
+        "label": "Lux",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "350",
+        "colors": [
+            "#0294e3",
+            "#0f8dc2",
+            "#03638c"
+        ],
+        "seg1": "25",
+        "seg2": "35",
+        "className": "",
+        "x": 560,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "eb1a29cc4c35dedd",
+        "type": "ui_template",
+        "z": "50747848c90fa6d0",
+        "group": "c8432e3baaf47ce6",
+        "name": "Sound effects",
+        "order": 1,
+        "width": 18,
+        "height": "20",
+        "format": "<html>\n    <style>\n        .track1{\n            width: 900px;\n        }     \n    </style>\n   \n    <p>Sonido de alarma Futurista</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/star_wars_alarm.mp3\" />\t\n    </audio>\n    <p>Sonido de ambiente de oficina 1</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/office_sounds_1.mp3\" />\t\n    </audio>\n    <p>Sonido de Ambiente industrial 1</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/ruidos-industriales.mp3\" />\t\n    </audio> \n    <p>Sonido de Martillo</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/Martillo.mp3\" />\t\n    </audio> \n    <p>Sonido de Ruteadora de madera</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/RouterMadera.mp3\" />\t\n    </audio> \n    <p>Sonido de Torno</p>\n    <p></p>\n    <audio controls class=track1>\n        <source src=\"/Music/Tornocnc.mp3\" />\t\n    </audio> \n    \n</html>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    }
+]
